@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { loginRequest } from '../../helpers/network';
 import { saveUser } from '../../helpers/authentication';
 class Login extends Component {
@@ -31,29 +31,34 @@ class Login extends Component {
   render(){
     return (<Layout>
       {this.state.loggedin ? <Redirect to="/users/"/> : null}
-      <div className="row">
-        <div className="col">
-          <h1 className="heading">Please Login</h1>
-        </div>
-      </div>
 
       {this.state.error ?
         <div className="alert alert-danger" role="alert">
           {this.state.error}
         </div>
       : null }
-      <form onSubmit={this.submitForm}>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Email address</label>
-        <input name="email" type="email" onChange={this.updateVal} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputPassword1">Password</label>
-        <input name="password" onChange={this.updateVal} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-      </div>
-      <button type="submit" className="btn btn-primary">Login</button>
-    </form>
+
+    <div className="login-form-wrapper border-radius shadow-md">
+            <i className="fas fa-project-diagram fa-5x"></i>
+            <h2>Welcome back!</h2>
+            <h3>Sign in to your account</h3>
+            <div className="login-form"> 
+                <form onSubmit={this.submitForm}>
+                    <div className="login-email-field">
+                        <input className="login-email-input border-radius-md" type="email" name="email" placeholder="name@company.com" onChange={this.updateVal} />
+                    </div>
+                    <div className="login-email-field">
+                        <input className="login-password-input border-radius-md"type="password" name="password" placeholder="*********" onChange={this.updateVal} />
+                    </div>
+                    <div>
+                        <button type="submit" className="login-submit-button border-radius-md">Sign In</button>
+                    </div>
+                    <div className="login-to-registration">
+                        Don't have an account yet? You can create it <a><Link to="/register">here</Link></a>
+                    </div>
+                </form>
+            </div>       
+        </div>
     </Layout>)
   }
 }

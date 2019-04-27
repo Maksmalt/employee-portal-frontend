@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <title>Dashboard | Employee portal</title>
+</head>
+
+<body>
+    <nav class="nav-main">
+        <div class="dropdown show">
+            <a class="navbar-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="false" aria-expanded="false">
+                <i class="fas fa-bars fa-2x navmain-menu"></i>
+            </a>
+            <div class="dropdown-menu left-subitems" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item left-link" id="left-image" href="#"><img src="avatar.png" alt="avatar"
+                        class="left-image"></a>
+                <a class="dropdown-item left-link" href="#">Employment certificate</a>
+                <a class="dropdown-item left-link" href="#">Salary certificate</a>
+                <a class="dropdown-item left-link" href="#">Expense claim</a>
+                <a class="dropdown-item left-link" href="#">Leave request</a>
+                <a class="dropdown-item left-link" href="#">Flight booking</a>
+                <a class="dropdown-item left-link" href="#">Training request</a>
+                <a class="dropdown-item left-link" href="#">NOC certificate</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item left-link" href="#">Settings</a>
+                <a class="dropdown-item left-link" href="#">Notifications</a>
+                <a class="dropdown-item left-link" href="#">Logout</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item left-link" href="#">Exit the App</a>
+            </div>
+        </div>
+
+        <div class="navbar-logo">
+            <a href="#"><i class="fas fa-project-diagram fa-2x navmain-logo"></i><span class="logo-text">EMPLOYEE
+                    PORTAL</span></a>
+        </div>
+
+        <div class="navbar-rightpart">
+
+            <div class="dropdown show">
+                <a class="navbar-toggle circle-arrow" href="#" role="button" id="dropdownMenuLink1"
+                    data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                    <img src="avatar.png" alt="avatar" class="navmain-circle small-avatar">
+                    <i class="fas fa-sort-down fa-2x navmain-arrow"></i>
+                </a>
+                <div class="dropdown-menu right-subitems" aria-labelledby="dropdownMenuLink1">
+                    <a class="dropdown-item left-link" href="#">Settings</a>
+                    <a class="dropdown-item left-link" href="#">Notifications</a>
+                    <a class="dropdown-item left-link" href="#">Logout</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item left-link" href="#">Exit the App</a>
+                </div>
+            </div>
+
+
+            <div class="dropdown show">
+                <a class="navbar-toggle navbar-notifications" href="#" role="button" id="dropdownMenuLink3"
+                    data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                    <i class="fas fa-bell fa-2x navmain-notif"></i>
+                    <i class="fas fa-circle navmain-notifcircle"></i>
+                </a>
+                <div class="dropdown-menu notif-subitems" aria-labelledby="dropdownMenuLink3">
+                    <div class="notif-body">
+                        <a href="#" class="notif-link">
+                            <p class="notif-date">29 May 2019, 10:15 am</p>
+                            <p class="notif-text">Your request <span class="notif-textred">SC0002</span> has been
+                                submitted
+                                and has status <span class="notif-textred">"New"</span></p>
+                        </a>
+                    </div>
+                    <div class="notif-body">
+                        <a href="#" class="notif-link">
+                            <p class="notif-date">30 May 2019, 13:46 pm</p>
+                            <p class="notif-text">Your request <span class="notif-textred">SC0002</span> is now under
+                                status <span class="notif-textred">"Processing"</span></p>
+                        </a>
+                    </div>
+                    <div class="notif-body">
+                        <a href="#" class="notif-link">
+                            <p class="notif-date">30 May 2019, 14:55 pm</p>
+                            <p class="notif-text">Your attention is required! The status for your request <span
+                                    class="notif-textred">SC0002</span> has been changed to <span
+                                    class="notif-textred">"Need information"</span>. Click here to add the necessary
+                                information </p>
+                        </a>
+                    </div>
+                    <div class="notif-body">
+                        <a href="#" class="notif-link">
+                            <p class="notif-date">30 May 2019, 15:53 pm</p>
+                            <p class="notif-text">Your request <span class="notif-textred">SC0002</span> is now under
+                                status <span class="notif-textred">"Processing"</span></p>
+                        </a>
+                    </div>
+                    <div class="notif-body">
+                        <a href="#" class="notif-link">
+                            <p class="notif-date">01 Jun 2019, 09:24 am</p>
+                            <p class="notif-text">Your request <span class="notif-textred">SC0002</span> has been
+                                completed and now under status <span class="notif-textred">"Ready for collection"</span>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-greetings">
+        <img src="avatar.png" alt="avatar" class="left-image dashboard-image" >
+        <h3>Hi, Employee Name</h3>
+    </div>
+    <div class="dashboard-tablemain">
+        <div class="dashboard-tablename">
+            <h4>Your requests</h4>
+            <div class="dashboard-tablesort">
+                <h5>Sort by</h5>
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink5"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Date submitted
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink5">
+                        <a class="dropdown-item" href="#">Subject</a>
+                        <a class="dropdown-item" href="#">Status</a>
+                    </div>
+            </div>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Subject</th>
+                    <th>Date submitted</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>EM0003</td>
+                    <td>Employment certificate</td>
+                    <td>17 Mar 2019</td>
+                    <td>Processing</td>
+                </tr>
+                <tr>
+                    <td>SC0002</td>
+                    <td>Salary certificate</td>
+                    <td>05 Jan 2019</td>
+                    <td>Information required</td>
+                </tr>
+                <tr>
+                    <td>EC0001</td>
+                    <td>Expense claim</td>
+                    <td>28 Dec 2018</td>
+                    <td>Completed</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="dashboard-newrequest">
+        <h4>New requests</h4>
+        <div class="col-md">
+             <button type="button" class="btn btn-primary">Employment certificate</button>
+             <button type="button" class="btn btn-primary">Expense claim</button>
+             <button type="button" class="btn btn-primary">Leave request</button>
+             <button type="button" class="btn btn-primary">Flight booking</button>
+             <button type="button" class="btn btn-primary">Salary certificate</button>
+             <button type="button" class="btn btn-primary">Non-objection certificate</button>
+             <button type="button" class="btn btn-primary">Training request</button>
+             <button type="button" class="btn btn-primary">Visa arrangements</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

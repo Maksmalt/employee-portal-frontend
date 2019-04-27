@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { registerRequest } from '../../helpers/network';
 import { saveUser } from '../../helpers/authentication';
 class Register extends Component {
@@ -10,57 +10,61 @@ class Register extends Component {
     areregistered: null
   }
   updateVal = (e) => {
-    this.setState({[e.target.name]: e.target.value})
+    this.setState({ [e.target.name]: e.target.value })
   }
-  submitForm = async(e) => {
+  submitForm = async (e) => {
     e.preventDefault();
     this.setState({
       error: null
     })
     try {
-      let response = await registerRequest({email: this.state.email, password: this.state.password, name: this.state.name});
+      let response = await registerRequest({ email: this.state.email, password: this.state.password, name: this.state.name });
       saveUser(response);
       this.setState({
         loggedin: true,
-        areregistered: true 
+        areregistered: true
       })
-    }catch (e){
+    } catch (e) {
       this.setState({
         error: e.email
       })
     }
   }
-  render(){
+  render() {
     return (<Layout>
-      {this.state.areregistered ? <Redirect to="/success"/> : null}
-      <div className="row">
-        <div className="col">
-          <h1 className="heading">Please Register</h1>
-        </div>
-      </div>
+      {this.state.areregistered ? <Redirect to="/success" /> : null}
 
       {this.state.error ?
         <div className="alert alert-danger" role="alert">
           {this.state.error}
         </div>
-      : null }
-      <form onSubmit={this.submitForm}>
-      <div className="form-group">
-        <label htmlFor="exampleInputName1">Name</label>
-        <input name="name" onChange={this.updateVal} type="name" className="form-control" id="exampleInputName1" placeholder="Enter Name" />
-        <small id="nameHelp" className="form-text text-muted">What do people call you?</small>
+        : null}
+
+      <div class="login-form-wrapper border-radius shadow-md">
+        <i class="fas fa-project-diagram fa-5x"></i>
+        <h2>Welcome</h2>
+        <h3>Create your account here</h3>
+        <div class="login-form">
+          <form onSubmit={this.submitForm}>
+            <div class="login-email-field">
+              <input class="login-email-input border-radius-md" onChange={this.updateVal} type="name" name="name" placeholder="Your Name" />
+            </div>
+            <div class="login-email-field">
+              <input class="login-email-input border-radius-md" onChange={this.updateVal} type="email" name="email" placeholder="name@company.com" />
+            </div>
+            <div class="login-email-field">
+              <input class="login-password-input border-radius-md" onChange={this.updateVal} type="password" name="password" placeholder="*********" />
+            </div>
+            <div>
+              <button type="submit" class="login-submit-button border-radius-md">Sign In</button>
+            </div>
+            <div class="login-to-registration">
+              Already registered? Login <a><Link to="/users/login">here</Link></a>
+            </div>
+          </form>
+        </div>
       </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputEmail1">Email address</label>
-        <input name="email" type="email" onChange={this.updateVal} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div className="form-group">
-        <label htmlFor="exampleInputPassword1">Password</label>
-        <input name="password" onChange={this.updateVal} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-      </div>
-      <button type="submit" className="btn btn-primary">Register</button>
-    </form>
+
     </Layout>)
   }
 }
