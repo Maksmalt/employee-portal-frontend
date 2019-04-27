@@ -47,7 +47,7 @@ function registerRequest({name, email, password}){
 
 function getDashboard(){
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:5000/dashboard", {
+    fetch("https://hrportal-astro.herokuapp.com/tickets", {
       headers: {
        'Authorization': getToken() 
       }
@@ -57,7 +57,7 @@ function getDashboard(){
         return;
       }
       response.json().then(json => {
-        resolve(json.data);
+        resolve(json);
       }).catch(e => reject(e));
     }).catch(err => reject(err))
   })

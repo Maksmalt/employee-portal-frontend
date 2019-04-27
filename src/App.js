@@ -6,6 +6,7 @@ import './App.css';
 import "./_html-css/login.css";
 import Register from './routes/users/register';
 import Success from "./routes/users/success";
+import Request from './routes/request/index';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <Route path='/success' component={Success} />
         <Route path='/users' component={Users} />
         <Route path='/register' component={Register} />
+        <Route path="/request" component={Request} />
       </Switch>
     );
   }
